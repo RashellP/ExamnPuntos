@@ -1,19 +1,20 @@
-class punto{
-        constructor(distancia){
-            this.distancia = distancia;
-            this.puntoX = null;
-            this.puntoY = null;
+class Punto{
+    constructor(){
+        this.distancia = 0;
+        this.puntoX = null;
+        this.puntoY = null;
+    }
+    calcularDistancia(pX, pY){
+        if (this.puntoX == null && this.puntoY == null) {
+            this.puntoX = pX;
+            this.puntoY = pY;
+            return this.distancia;
         }
-        setpX(puntoX){
-            this.puntoX = puntoX;
+        else{
+            this.distancia += Math.sqrt((pX - this.puntoX) + (pY - this.puntoY));
+            this.puntoX = pX;
+            this.puntoY = pY;
+            return this.distancia;
         }
-        setpY(puntoY){
-            this.puntoY = puntoY;
-        }
-        getpX(){
-            return this.puntoX;
-        }
-        gepY(){
-            return this.puntoY;
-        }
+    }
 }

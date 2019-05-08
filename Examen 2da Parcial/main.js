@@ -1,10 +1,8 @@
-document.getElementById('cp').addEventListener('click', nuevoP);
-var nP = new punto;
-function nuevoP(){
-    let nX = new punto(document.getElementById('x').value);
-    nP.agregar(nX);
-    let nY = new punto(document.getElementById('y').value);
-    nP.agregar(nY);
-    console.log(nX);
-    console.log(nY);
+var p = new Punto();
+ document.getElementById('cp').addEventListener('click', nuevoPunto);
+
+ function nuevoPunto() {
+     var x = document.getElementById('x').value;
+     var y = document.getElementById('y').value;
+     document.getElementById('res').innerHTML = p.calcularDistancia(x, y);
 }
